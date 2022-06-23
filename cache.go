@@ -3,6 +3,7 @@ package cache
 import (
 	"fmt"
 	"runtime"
+	"sync"
 )
 
 type Cache interface {
@@ -51,4 +52,46 @@ func CalcLen(value interface{}) int {
 		panic(any(fmt.Sprintf("&T is not implement cache.Value", value)))
 	}
 	return n
+}
+
+const DefaultMaxBytes = 1 << 29
+
+type safeCache struct {
+	m          sync.RWMutex
+	cache      Cache
+	nhit, nget int
+}
+
+func newSafeCache(cache Cache) *safeCache {
+	return &safeCache{cache: cache}
+}
+
+func (sc *safeCache) set(key string, value interface{}) {
+	sc.m.Lock()
+	defer sc.m.Unlock()
+	sc.cache.Set(key, value)
+}
+
+func (sc *safeCache) get(key string) interface{} {
+	sc.m.RLock()
+	defer sc.m.RUnlock()
+	sc.nget++
+	if sc.cache == nil {
+		return nil
+	}
+	v := sc.cache.Get(key)
+	if v != nil {
+		sc.nhit++
+	}
+	return v
+}
+
+func (sc *safeCache) stat() *Stat {
+	return &Stat{
+		Nhit: sc.nhit, Nget: sc.nget,
+	}
+}
+
+type Stat struct {
+	Nhit, Nget int
 }
