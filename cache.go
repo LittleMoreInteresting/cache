@@ -49,7 +49,7 @@ func CalcLen(value interface{}) int {
 		n = 16
 
 	default:
-		panic(any(fmt.Sprintf("&T is not implement cache.Value", value)))
+		panic(fmt.Sprintf("%T is not implement cache.Value", value))
 	}
 	return n
 }

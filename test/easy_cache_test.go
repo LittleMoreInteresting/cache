@@ -39,4 +39,5 @@ func TestEasyCacheGet(t *testing.T) {
 	stat := easyCache.Stat()
 	Is.Equal(stat.Nget, 10)
 	Is.Equal(stat.Nhit, 4)
+
 }
