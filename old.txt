@@ -1,0 +1,34 @@
+?   	github.com/LittleMoreInteresting/cache	[no test files]
+?   	github.com/LittleMoreInteresting/cache/fast	[no test files]
+PASS
+ok  	github.com/LittleMoreInteresting/cache/fifo	0.512s
+PASS
+ok  	github.com/LittleMoreInteresting/cache/lfu	0.490s
+PASS
+ok  	github.com/LittleMoreInteresting/cache/lru	0.512s
+goos: windows
+goarch: amd64
+pkg: github.com/LittleMoreInteresting/cache/test
+cpu: Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz
+BenchmarkNewCacheSetParallel-4        	 1000000	      2530 ns/op	     361 B/op	       6 allocs/op
+BenchmarkNewCacheSetParallel-4        	 1000000	      1991 ns/op	     361 B/op	       6 allocs/op
+BenchmarkNewCacheSetParallel-4        	  999940	      1874 ns/op	     363 B/op	       7 allocs/op
+BenchmarkNewCacheSetParallel-4        	 1000000	      2784 ns/op	     362 B/op	       6 allocs/op
+BenchmarkNewCacheSetParallel-4        	  705840	      1685 ns/op	     326 B/op	       6 allocs/op
+BenchmarkNewCacheSetParallel-4        	 1000000	      1758 ns/op	     361 B/op	       6 allocs/op
+BenchmarkNewCacheSetParallel-4        	  749956	      1622 ns/op	     321 B/op	       6 allocs/op
+BenchmarkNewCacheSetParallel-4        	 1000000	      1641 ns/op	     359 B/op	       6 allocs/op
+BenchmarkNewCacheSetParallel-4        	 1000000	      1598 ns/op	     361 B/op	       6 allocs/op
+BenchmarkNewCacheSetParallel-4        	 1000000	      1620 ns/op	     361 B/op	       6 allocs/op
+BenchmarkTourFastCacheSetParallel-4   	 1000000	      1044 ns/op	     372 B/op	       7 allocs/op
+BenchmarkTourFastCacheSetParallel-4   	 1000000	      1100 ns/op	     370 B/op	       6 allocs/op
+BenchmarkTourFastCacheSetParallel-4   	 1226923	       940.6 ns/op	     347 B/op	       6 allocs/op
+BenchmarkTourFastCacheSetParallel-4   	 1000000	      1053 ns/op	     372 B/op	       7 allocs/op
+BenchmarkTourFastCacheSetParallel-4   	 1000000	      1201 ns/op	     367 B/op	       6 allocs/op
+BenchmarkTourFastCacheSetParallel-4   	 1000000	      1155 ns/op	     372 B/op	       7 allocs/op
+BenchmarkTourFastCacheSetParallel-4   	 1218204	      1205 ns/op	     349 B/op	       7 allocs/op
+BenchmarkTourFastCacheSetParallel-4   	 1000000	      1178 ns/op	     368 B/op	       6 allocs/op
+BenchmarkTourFastCacheSetParallel-4   	 1000000	      1162 ns/op	     372 B/op	       7 allocs/op
+BenchmarkTourFastCacheSetParallel-4   	 1000000	      1266 ns/op	     372 B/op	       7 allocs/op
+PASS
+ok  	github.com/LittleMoreInteresting/cache/test	33.924s

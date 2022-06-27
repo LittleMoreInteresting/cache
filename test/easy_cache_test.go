@@ -1,15 +1,17 @@
 package test
 
 import (
-	"sync"
+	"fmt"
+	"math/rand"
 	"testing"
+	"time"
 
 	"github.com/LittleMoreInteresting/cache"
+	"github.com/LittleMoreInteresting/cache/fast"
 	"github.com/LittleMoreInteresting/cache/lru"
-	"github.com/matryer/is"
 )
 
-func TestEasyCacheGet(t *testing.T) {
+/*func TestEasyCacheGet(t *testing.T) {
 	mockDb := map[string]string{
 		"key1": "value1",
 		"key2": "value2",
@@ -40,4 +42,41 @@ func TestEasyCacheGet(t *testing.T) {
 	Is.Equal(stat.Nget, 10)
 	Is.Equal(stat.Nhit, 4)
 
+}*/
+func BenchmarkNewCacheSetParallel(b *testing.B) {
+	newEasyCache := cache.NewEasyCache(lru.New(b.N*100, nil), nil)
+	rand.Seed(time.Now().Unix())
+	b.RunParallel(func(pb *testing.PB) {
+		id := rand.Intn(1000)
+		counter := 0
+		for pb.Next() {
+			newEasyCache.Set(parallelKey(id, counter), string(value()))
+			counter = counter + 1
+		}
+	})
 }
+func key(i int) string {
+	return fmt.Sprintf("key-%010d", i)
+}
+func value() []byte {
+	return make([]byte, 100)
+}
+func parallelKey(threadID int, counter int) string {
+	return fmt.Sprintf("key-%04d-%06d", threadID, counter)
+}
+
+func BenchmarkTourFastCacheSetParallel(b *testing.B) {
+	newFastCache := fast.NewFastCache(b.N, 64, nil)
+	rand.Seed(time.Now().Unix())
+	b.RunParallel(func(pb *testing.PB) {
+		id := rand.Intn(1000)
+		counter := 0
+		for pb.Next() {
+			newFastCache.Set(parallelKey(id, counter), value())
+			counter = counter + 1
+		}
+	})
+}
+
+//go test -bench=SetParallel -benchmem -count=10 ./... | tee old.txt
+// benchstat old.txt

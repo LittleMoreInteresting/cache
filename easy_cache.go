@@ -32,8 +32,11 @@ func (cache EasyCache) Get(key string) interface{} {
 		cache.mainCache.set(key, value)
 		return value
 	}
-
 	return nil
+}
+
+func (cache EasyCache) Set(key string, value interface{}) {
+	cache.mainCache.set(key, value)
 }
 
 func (cache EasyCache) Stat() *Stat {
