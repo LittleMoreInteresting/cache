@@ -1,2 +1,4 @@
 github.com/matryer/is v1.4.0 h1:sosSmIWwkYITGrxZ25ULNDeKiMNzFSr4V/eqBQP0PeE=
 github.com/matryer/is v1.4.0/go.mod h1:8I/i5uYgLzgsgEloJE1U6xx5HkBQpAZvepWuujKwMRU=
+github.com/petermattis/goid v0.0.0-20220526132513-07eaf5d0b9f4 h1:COozsq2xbSoZ6kt+/iHGF7eQqiUZr2uxQoAe4OzNkhE=
+github.com/petermattis/goid v0.0.0-20220526132513-07eaf5d0b9f4/go.mod h1:pxMtw7cyUw6B2bRH0ZBANSPg+AoSud1I1iyJHI69jH4=
