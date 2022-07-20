@@ -36,6 +36,5 @@ func (ssf *shardSingleFlight) DoEx(key string, fn func() (interface{}, error)) (
 func fnv32(key string) uint32 {
 	hash := fnv.New32()
 	_, _ = hash.Write([]byte(key))
-	hash.Sum32()
 	return hash.Sum32()
 }
