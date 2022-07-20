@@ -1,0 +1,36 @@
+goos: windows
+goarch: amd64
+pkg: github.com/LittleMoreInteresting/cache/singleflight
+cpu: Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz
+BenchmarkSingleFlightSetParallel-4           	 1932255	       634.0 ns/op	      66 B/op	       2 allocs/op
+BenchmarkSingleFlightSetParallel-4           	 1782958	       661.3 ns/op	      69 B/op	       3 allocs/op
+BenchmarkSingleFlightSetParallel-4           	 1401788	       741.2 ns/op	      67 B/op	       2 allocs/op
+BenchmarkSingleFlightSetParallel-4           	 1916822	       672.0 ns/op	      69 B/op	       3 allocs/op
+BenchmarkSingleFlightSetParallel-4           	 1916822	       628.7 ns/op	      66 B/op	       2 allocs/op
+BenchmarkSingleFlightSetParallel-4           	 1756854	       629.0 ns/op	      66 B/op	       2 allocs/op
+BenchmarkSingleFlightSetParallel-4           	 1895625	       620.4 ns/op	      66 B/op	       2 allocs/op
+BenchmarkSingleFlightSetParallel-4           	 1938499	       634.0 ns/op	      66 B/op	       2 allocs/op
+BenchmarkSingleFlightSetParallel-4           	 1886684	       621.8 ns/op	      66 B/op	       2 allocs/op
+BenchmarkSingleFlightSetParallel-4           	 1782958	       631.6 ns/op	      66 B/op	       2 allocs/op
+BenchmarkShardSingleFlightSetParallel-4      	 6416744	       194.2 ns/op	      69 B/op	       3 allocs/op
+BenchmarkShardSingleFlightSetParallel-4      	 5454232	       215.3 ns/op	      68 B/op	       2 allocs/op
+BenchmarkShardSingleFlightSetParallel-4      	 6153495	       198.3 ns/op	      69 B/op	       3 allocs/op
+BenchmarkShardSingleFlightSetParallel-4      	 6153492	       194.4 ns/op	      69 B/op	       3 allocs/op
+BenchmarkShardSingleFlightSetParallel-4      	 6185212	       197.9 ns/op	      69 B/op	       3 allocs/op
+BenchmarkShardSingleFlightSetParallel-4      	 6217261	       190.0 ns/op	      69 B/op	       3 allocs/op
+BenchmarkShardSingleFlightSetParallel-4      	 5882014	       196.7 ns/op	      69 B/op	       3 allocs/op
+BenchmarkShardSingleFlightSetParallel-4      	 6217261	       189.0 ns/op	      69 B/op	       3 allocs/op
+BenchmarkShardSingleFlightSetParallel-4      	 6174037	       211.1 ns/op	      69 B/op	       3 allocs/op
+BenchmarkShardSingleFlightSetParallel-4      	 6416744	       190.0 ns/op	      69 B/op	       3 allocs/op
+BenchmarkShardSingleFlightBadSetParallel-4   	 2276908	       533.6 ns/op	      55 B/op	       2 allocs/op
+BenchmarkShardSingleFlightBadSetParallel-4   	 2238676	       535.2 ns/op	      55 B/op	       2 allocs/op
+BenchmarkShardSingleFlightBadSetParallel-4   	 2242861	       531.5 ns/op	      55 B/op	       2 allocs/op
+BenchmarkShardSingleFlightBadSetParallel-4   	 2238676	       533.8 ns/op	      55 B/op	       2 allocs/op
+BenchmarkShardSingleFlightBadSetParallel-4   	 2255509	       536.5 ns/op	      54 B/op	       2 allocs/op
+BenchmarkShardSingleFlightBadSetParallel-4   	 2234508	       530.3 ns/op	      55 B/op	       2 allocs/op
+BenchmarkShardSingleFlightBadSetParallel-4   	 2230354	       530.4 ns/op	      55 B/op	       2 allocs/op
+BenchmarkShardSingleFlightBadSetParallel-4   	 2234508	       530.8 ns/op	      55 B/op	       2 allocs/op
+BenchmarkShardSingleFlightBadSetParallel-4   	 2242861	       532.4 ns/op	      54 B/op	       2 allocs/op
+BenchmarkShardSingleFlightBadSetParallel-4   	 2247061	       531.4 ns/op	      54 B/op	       2 allocs/op
+PASS
+ok  	github.com/LittleMoreInteresting/cache/singleflight	51.479s
